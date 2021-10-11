@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { JwtModule } from '@auth0/angular-jwt';
+import { UserComponent } from './components/user/user.component';
 
 export function tokenGetter(){
   return sessionStorage.getItem('token');
@@ -19,7 +20,8 @@ export function tokenGetter(){
   declarations: [
     AppComponent,
     LoginComponent,
-    SigninComponent
+    SigninComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

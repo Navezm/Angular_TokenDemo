@@ -42,7 +42,7 @@ export class SigninComponent implements OnInit {
     this.authService.signIn(formVal.username, formVal.password).subscribe(
       (data: any) => {
         console.log(data);
-        this.storageService.saveToken(data.token);
+        this.storageService.saveToken(data.token.replace('Bearer ',''));
       }
     )
   }
