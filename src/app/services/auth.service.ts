@@ -16,4 +16,12 @@ export class AuthService {
       password
     });
   }
+
+  signIn(username: string, password: string){
+    return this.http.post(environment.serverAddress + 'register', 
+    {
+      username,
+      password
+    });
+  }
 }

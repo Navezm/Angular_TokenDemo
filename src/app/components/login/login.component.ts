@@ -35,8 +35,7 @@ export class LoginComponent implements OnInit {
     //   this.storageService.saveToken(data.token);
     //   console.log(this.storageService.getToken());
     //   this.storageService.saveUser(data);
-    // });
-    
+    // }); 
   }
 
   submit(){
@@ -46,13 +45,13 @@ export class LoginComponent implements OnInit {
 
     const formVal = this.userForm.value;
 
-    this.authService.login(formVal.username, formVal.password)
-          .subscribe(
-            (data:any) =>
-            {
-              console.log(data);
-            }
-          );
+    this.authService.login(formVal.username, formVal.password).subscribe(
+      (data:any) =>
+      {
+        console.log(data);
+        this.storageService.saveToken(data.token.replace('Bearer ',''));
+      }
+    );
   }
 
 }
